@@ -3,6 +3,7 @@ name: Auto Update
 on:
   schedule:
     - cron: '*/10 * * * *'
+  workflow_dispatch:
 
 jobs:
   auto-commit:
