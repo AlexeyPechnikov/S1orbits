@@ -28,7 +28,7 @@ jobs:
 
       - name: Run update script
         run: |
-          ./update.sh
+          bash update.sh
 
       - name: Add changes to git
         run: |
