@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 # determine OS and execute the respective date commands
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]
+then
     MONTHS="$(date '+%Y-%m') $(date -v-1m '+%Y-%m')"
 else
     MONTHS="$(date '+%Y-%m') $(date '+%Y-%m' --date='1 month ago')"
