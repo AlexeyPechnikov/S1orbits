@@ -2,7 +2,7 @@ name: Auto Update
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   auto-commit:
@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install numpy pandas xmltodict
+          pip install numpy pandas xmltodict requests
 
       - name: Run update script
         run: |
