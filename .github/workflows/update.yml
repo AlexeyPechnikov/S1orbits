@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
+
 permissions:
   contents: write
 
@@ -34,8 +35,7 @@ jobs:
 
       - name: Add changes to git
         run: |
-          git add **/*.zip
-          git add **/*.md
+          git ls-files --deleted | xargs git add --all **/*.zip **/*.md
 
       - name: Commit and push
         run: |
