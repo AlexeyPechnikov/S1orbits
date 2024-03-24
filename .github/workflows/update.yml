@@ -2,7 +2,7 @@ name: Auto Update
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure Git
         run: |
