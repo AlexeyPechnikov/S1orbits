@@ -146,7 +146,7 @@ def download_orbit(basedir, properties, base_url):
 #             size = os.path.getsize(orbitpath)
 #             indexlines.append(f'{orb}\t{size}')
         with open(indexname + '.tmp', 'w') as f:
-            f.write('\n'.join(sorted(orbs)))
+            f.write('\n'.join(sorted(orbs)) + '\n')
         os.rename(indexname + '.tmp', indexname)
 
 if len(date) == 4:
