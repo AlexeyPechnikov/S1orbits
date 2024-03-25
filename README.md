@@ -1,4 +1,4 @@
-# S1orbits
+# Sentinel-1 Orbits
 This repository offers up-to-date and well-structured daily Sentinel-1 RESORB and POEORB orbits for PyGMTSAR InSAR software, available at [InSAR.dev](https://insar.dev/).
 
 We ensure the orbits remain current by utilizing regularly scheduled GitHub Actions runners that update the orbits catalog every four hours. Additionally, you can manually trigger the updating scripts on the GitHub Actions page or via a terminal command. Currently, this repository keeps track of the ESA's orbits store at https://step.esa.int/auxdata/orbits, but additional sources may be included if necessary.
