@@ -1,0 +1,43 @@
+name: Auto Update
+
+on:
+  schedule:
+    - cron: '15 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  full-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install numpy pandas xmltodict requests
+
+      - name: Run update script
+        run: |
+          bash dload.sh
+
+      - name: Add changes to git
+        run: |
+          git ls-files --deleted | xargs git add --all **/*.zip **/*.md
+
+      - name: Commit and push
+        run: |
+          git commit -m "Automated update" || echo "No changes to commit"
+          git push || echo "No changes to push"
