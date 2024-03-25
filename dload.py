@@ -139,14 +139,14 @@ def download_orbit(basedir, properties, base_url):
 
         # TODO: generate directory listing in README.md
         orbs = glob.glob('*ORB*' + ext, root_dir=os.path.dirname(orbitname))
-        indexname = os.path.join(basedir, dirname, 'README.md')
+        indexname = os.path.join(basedir, dirname, 'index.csv')
 #         indexlines = []
 #         for orb in orbs:
 #             orbitpath = os.path.join(os.path.dirname(orbitname), orb)
 #             size = os.path.getsize(orbitpath)
 #             indexlines.append(f'{orb}\t{size}')
         with open(indexname + '.tmp', 'w') as f:
-            f.write('\n'.join(orbs))
+            f.write('\n'.join(sorted(orbs)))
         os.rename(indexname + '.tmp', indexname)
 
 if len(date) == 4:

@@ -35,7 +35,7 @@ jobs:
 
       - name: Add changes to git
         run: |
-          git ls-files --deleted | xargs git add --all **/*.zip **/*.md
+          git ls-files --deleted | xargs git add --all **/*.zip **/*.csv
 
       - name: Commit and push
         run: |
