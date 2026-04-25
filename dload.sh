@@ -3,7 +3,7 @@
 
 TODAY=$(date '+%Y')
 
-for SATELLITE in S1A S1B S1C
+for SATELLITE in S1A S1B S1C S1D
 do
     for ORBIT in POEORB RESORB
     do

@@ -9,7 +9,7 @@ else
     MONTHS="$(date '+%Y-%m') $(date '+%Y-%m' --date='1 month ago')"
 fi
 
-for SATELLITE in S1A S1B S1C
+for SATELLITE in S1A S1B S1C S1D
 do
     for ORBIT in POEORB RESORB
     do
